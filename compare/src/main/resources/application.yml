@@ -1,0 +1,31 @@
+server:
+  port: 8089
+
+spring:
+  redis:
+    host: 10.60.200.200
+    port: 26900
+    password: carapi
+  datasource:
+    dynamic:
+      primary: default
+      strict: false
+      datasource:
+        default:
+          url: jdbc:sqlserver://10.27.14.170:1433;database=popauto;serverTimezone=GMT+8;trustServerCertificate=true
+          username: popautoadmin
+          password: A5088CC1-78B2-415F-81AF-511CC9537AAF
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+autohome:
+  job:
+    admin:
+      addresses: http://jobadmin.yz.test.autohome.com.cn
+    executor:
+      appname: car-api
+      ip:
+      port: 27705
+      logpath: /data/logroot/xxl-job/car-api/jobhandler/
+    accessToken: d7fe12b33d4c1a5423feb137e6b7bcd3
+
+

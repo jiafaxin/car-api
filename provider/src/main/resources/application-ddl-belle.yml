@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    solr:
+      host: http://findcar.rsolr.in.autohome.com.cn:7002/solr
+  cache:
+    ehcache:
+      config: classpath:ehcache-beta.xml
+  datasource:
+    dynamic:
+      primary: default
+      strict: false
+      datasource:
+        default:
+          url: jdbc:sqlserver://DB-PRODUCT-READ.LQ.AUTOHOME.COM.CN;database=popauto;serverTimezone=GMT+8;trustServerCertificate=true
+          username: product_reader
+          password: 8956DD34-7288-4ED3-8E16-4DA94DEEB383
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  redis:
+    host: car-api-prod.rediscluster.cache.corpautohome.com
+    port: 27610
+    password: carapi
+
+log:
+  home: /data/app/log
+
+solr:
+  searchseries:
+    url: http://findcar.rsolr.in.autohome.com.cn:7002/solr
+    corename: findcar_core2

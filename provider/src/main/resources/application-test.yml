@@ -1,0 +1,36 @@
+server:
+  port: 8086
+
+spring:
+  data:
+    solr:
+      host: http://10.168.99.82:8080/solr
+  cache:
+    ehcache:
+      config: classpath:ehcache-test.xml
+  redis:
+    host: 10.60.200.200
+    port: 26900
+    password: carapi
+  datasource:
+    dynamic:
+      primary: default
+      strict: false
+      datasource:
+        default:
+          url: jdbc:sqlserver://10.27.14.170:1433;database=popauto;serverTimezone=GMT+8;trustServerCertificate=true
+          username: popautoadmin
+          password: A5088CC1-78B2-415F-81AF-511CC9537AAF
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+
+provider:
+  can-from-db: true
+
+log:
+  home: /data/app/log
+
+solr:
+  searchseries:
+    url: http://10.168.99.82:8080/solr
+    corename: master1
